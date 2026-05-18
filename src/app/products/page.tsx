@@ -1,16 +1,30 @@
-import type {Metadata} from 'next';
-import {getLocale, getTranslations} from 'next-intl/server';
-import ProductsPageClient from '@/components/pages/ProductsPageClient';
-import type {AppLocale} from '@/lib/i18n';
+import type { Metadata } from "next";
+import { getLocale, getTranslations } from "next-intl/server";
+import ProductsPageClient from "@/components/pages/ProductsPageClient";
+import type { AppLocale } from "@/lib/i18n";
 
-const siteUrl = 'https://nordshop.pavel-skudarnov.ru';
-const urlFor = (locale: AppLocale, path: string) => (locale === 'en' ? `${siteUrl}/en${path}` : `${siteUrl}${path}`);
+const siteUrl = "https://nordshop.pavel-skudarnov.ru";
+const urlFor = (locale: AppLocale, path: string) =>
+  locale === "en" ? `${siteUrl}/en${path}` : `${siteUrl}${path}`;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = (await getLocale()) as AppLocale;
-  const t = await getTranslations('meta');
-  const path = '/products';
-  return {title: t('productsTitle'), description: t('productsDescription'), alternates: {canonical: urlFor(locale, path), languages: {ru: urlFor('ru', path), en: urlFor('en', path), 'x-default': urlFor('ru', path)}}};
+  const t = await getTranslations("meta");
+  const path = "/products";
+  return {
+    title: t("productsTitle"),
+    description: t("productsDescription"),
+    alternates: {
+      canonical: urlFor(locale, path),
+      languages: {
+        ru: urlFor("ru", path),
+        en: urlFor("en", path),
+        "x-default": urlFor("ru", path),
+      },
+    },
+  };
 }
 
-export default function ProductsPage() { return <ProductsPageClient />; }
+export default function ProductsPage() {
+  return <ProductsPageClient />;
+}

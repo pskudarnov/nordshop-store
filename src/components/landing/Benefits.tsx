@@ -1,21 +1,21 @@
-import {useTranslations} from 'next-intl';
+import { useTranslations } from "next-intl";
 import { CheckCircle2, ShieldCheck, Sparkles, Truck } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Benefits() {
-  const t = useTranslations('landing.benefits');
+  const t = useTranslations("landing.benefits");
   const benefits = [
-    { title: t('items.0.title'), text: t('items.0.text'), icon: Sparkles },
-    { title: t('items.1.title'), text: t('items.1.text'), icon: Truck },
-    { title: t('items.2.title'), text: t('items.2.text'), icon: ShieldCheck },
-    { title: t('items.3.title'), text: t('items.3.text'), icon: CheckCircle2 }
+    { title: t("items.0.title"), text: t("items.0.text"), icon: Sparkles },
+    { title: t("items.1.title"), text: t("items.1.text"), icon: Truck },
+    { title: t("items.2.title"), text: t("items.2.text"), icon: ShieldCheck },
+    { title: t("items.3.title"), text: t("items.3.text"), icon: CheckCircle2 },
   ];
 
   return (
     <Section id="why" className="pt-10">
-      <SectionHeading title={t('title')} subtitle={t('subtitle')} />
+      <SectionHeading title={t("title")} subtitle={t("subtitle")} />
       <div className="grid gap-4 md:grid-cols-2">
         {benefits.map((item) => (
           <Card key={item.title}>

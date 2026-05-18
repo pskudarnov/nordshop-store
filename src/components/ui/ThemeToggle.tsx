@@ -1,8 +1,8 @@
 "use client";
 
-import {Moon, Sun} from "lucide-react";
-import {useTranslations} from 'next-intl';
-import {useEffect, useState} from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
@@ -21,9 +21,9 @@ type ThemeToggleProps = {
   className?: string;
 };
 
-export function ThemeToggle({className}: ThemeToggleProps) {
+export function ThemeToggle({ className }: ThemeToggleProps) {
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
-  const t = useTranslations('theme');
+  const t = useTranslations("theme");
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -33,7 +33,7 @@ export function ThemeToggle({className}: ThemeToggleProps) {
   }, [theme]);
 
   const isDark = theme === "dark";
-  const label = isDark ? t('toLight') : t('toDark');
+  const label = isDark ? t("toLight") : t("toDark");
 
   return (
     <button
@@ -41,8 +41,10 @@ export function ThemeToggle({className}: ThemeToggleProps) {
       onClick={() => setTheme((prev) => (prev === "dark" ? "light" : "dark"))}
       className={[
         "inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--card)] text-[var(--foreground)] transition-colors hover:bg-[var(--muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)]",
-        className
-      ].filter(Boolean).join(' ')}
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       aria-label={label}
       title={label}
     >

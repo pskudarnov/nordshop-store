@@ -1,18 +1,124 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import {useLocale, useTranslations} from 'next-intl';
+import { useLocale, useTranslations } from "next-intl";
 import { CreditCard, Lock } from "lucide-react";
 import { products } from "@/data/products";
 import { formatCurrency } from "@/lib/currency";
 import { getCartTotals, useCartStore } from "@/store/cart-store";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import {localizeProduct} from '@/lib/product-i18n';
-import type {AppLocale} from '@/lib/i18n';
+import { localizeProduct } from "@/lib/product-i18n";
+import type { AppLocale } from "@/lib/i18n";
 
-const fieldClassName = "h-10 w-full rounded-lg border border-[var(--border)] bg-[var(--input)] px-3 text-sm text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--ring)]";
+const fieldClassName =
+  "h-10 w-full rounded-lg border border-[var(--border)] bg-[var(--input)] px-3 text-sm text-[var(--foreground)] placeholder:text-[var(--muted-foreground)] transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-[var(--ring)]";
 
-export default function CheckoutPageClient() { const t = useTranslations('checkout'); const locale = useLocale() as AppLocale; const [step, setStep] = useState(0); const items = useCartStore((s) => s.items); const clear = useCartStore((s) => s.clear); const totals = getCartTotals(items); const steps = [t('steps.0'), t('steps.1'), t('steps.2')]; const orderItems = useMemo(() => items.map((item) => ({ item, product: products.find((p) => p.id === item.productId) })).filter((x) => x.product), [items]);
-  return <section className="py-10"><h1 className="text-3xl font-semibold tracking-tight">{t('title')}</h1><div className="mt-5 flex flex-wrap gap-2">{steps.map((s, i) => <div key={s} className={`rounded-full px-3 py-1 text-xs tracking-[0.02em] ${i <= step ? "bg-[var(--foreground)] text-[var(--background)]" : "bg-[var(--muted)] text-[var(--muted-foreground)] border border-[var(--border)]"}`}>{i + 1}. {s}</div>)}</div><div className="mt-6 grid gap-6 lg:grid-cols-[1fr_340px]"><Card>{step === 0 ? <div className="space-y-3.5"><h2 className="text-lg font-semibold tracking-tight">{t('shippingTitle')}</h2><input className={fieldClassName} placeholder={t('name')} /><input className={fieldClassName} placeholder={t('address')} /><select className={fieldClassName}><option>{t('standard')}</option><option>{t('express')}</option></select><Button onClick={() => setStep(1)}>{t('toPayment')}</Button></div> : null}{step === 1 ? <div className="space-y-3.5"><h2 className="text-lg font-semibold tracking-tight">{t('paymentTitle')}</h2><div className="rounded-xl border border-[var(--border)] bg-[var(--muted)] p-3 text-sm text-[var(--muted-foreground)]"><CreditCard className="mr-1 inline h-4 w-4" />{t('cardDetails')}</div><input className={fieldClassName} placeholder={t('cardNumber')} /><div className="grid grid-cols-2 gap-3"><input className={fieldClassName} placeholder={t('exp')} /><input className={fieldClassName} placeholder={t('cvc')} /></div><input className={fieldClassName} placeholder={t('promo')} /><Button onClick={() => setStep(2)}>{t('review')}</Button></div> : null}{step === 2 ? <div className="space-y-3.5"><h2 className="text-lg font-semibold tracking-tight">{t('confirmTitle')}</h2><p className="text-sm leading-relaxed text-[var(--muted-foreground)]">{t('confirmText')}</p><Button onClick={() => clear()} className="bg-[var(--foreground)] text-[var(--background)] hover:brightness-110">{t('placeOrder')}</Button></div> : null}</Card><aside className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 text-[var(--card-foreground)] shadow-[var(--shadow-soft)]"><h2 className="text-base font-semibold tracking-tight">{t('summary')}</h2><div className="mt-3 space-y-2 text-sm">{orderItems.map(({ item, product }) => { if (!product) return null; const localized = localizeProduct(product, locale); return <p key={item.productId} className="flex justify-between gap-3"><span className="text-[var(--muted-foreground)]">{localized.name} × {item.quantity}</span><span className="text-[var(--foreground)]">{formatCurrency(localized.price * item.quantity, locale)}</span></p>; })}</div><div className="mt-3 border-t border-[var(--border)] pt-3 text-sm"><p className="flex justify-between"><span className="text-[var(--muted-foreground)]">{t('total')}</span><span className="font-medium text-[var(--foreground)]">{formatCurrency(totals.total, locale)}</span></p></div><p className="mt-3 text-xs text-[var(--muted-foreground)]"><Lock className="mr-1 inline h-3.5 w-3.5" />{t('secure')}</p></aside></div></section>;
+export default function CheckoutPageClient() {
+  const t = useTranslations("checkout");
+  const locale = useLocale() as AppLocale;
+  const [step, setStep] = useState(0);
+  const items = useCartStore((s) => s.items);
+  const clear = useCartStore((s) => s.clear);
+  const totals = getCartTotals(items);
+  const steps = [t("steps.0"), t("steps.1"), t("steps.2")];
+  const orderItems = useMemo(
+    () =>
+      items
+        .map((item) => ({ item, product: products.find((p) => p.id === item.productId) }))
+        .filter((x) => x.product),
+    [items],
+  );
+  return (
+    <section className="py-10">
+      <h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
+      <div className="mt-5 flex flex-wrap gap-2">
+        {steps.map((s, i) => (
+          <div
+            key={s}
+            className={`rounded-full px-3 py-1 text-xs tracking-[0.02em] ${i <= step ? "bg-[var(--foreground)] text-[var(--background)]" : "bg-[var(--muted)] text-[var(--muted-foreground)] border border-[var(--border)]"}`}
+          >
+            {i + 1}. {s}
+          </div>
+        ))}
+      </div>
+      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_340px]">
+        <Card>
+          {step === 0 ? (
+            <div className="space-y-3.5">
+              <h2 className="text-lg font-semibold tracking-tight">{t("shippingTitle")}</h2>
+              <input className={fieldClassName} placeholder={t("name")} />
+              <input className={fieldClassName} placeholder={t("address")} />
+              <select className={fieldClassName}>
+                <option>{t("standard")}</option>
+                <option>{t("express")}</option>
+              </select>
+              <Button onClick={() => setStep(1)}>{t("toPayment")}</Button>
+            </div>
+          ) : null}
+          {step === 1 ? (
+            <div className="space-y-3.5">
+              <h2 className="text-lg font-semibold tracking-tight">{t("paymentTitle")}</h2>
+              <div className="rounded-xl border border-[var(--border)] bg-[var(--muted)] p-3 text-sm text-[var(--muted-foreground)]">
+                <CreditCard className="mr-1 inline h-4 w-4" />
+                {t("cardDetails")}
+              </div>
+              <input className={fieldClassName} placeholder={t("cardNumber")} />
+              <div className="grid grid-cols-2 gap-3">
+                <input className={fieldClassName} placeholder={t("exp")} />
+                <input className={fieldClassName} placeholder={t("cvc")} />
+              </div>
+              <input className={fieldClassName} placeholder={t("promo")} />
+              <Button onClick={() => setStep(2)}>{t("review")}</Button>
+            </div>
+          ) : null}
+          {step === 2 ? (
+            <div className="space-y-3.5">
+              <h2 className="text-lg font-semibold tracking-tight">{t("confirmTitle")}</h2>
+              <p className="text-sm leading-relaxed text-[var(--muted-foreground)]">
+                {t("confirmText")}
+              </p>
+              <Button
+                onClick={() => clear()}
+                className="bg-[var(--foreground)] text-[var(--background)] hover:brightness-110"
+              >
+                {t("placeOrder")}
+              </Button>
+            </div>
+          ) : null}
+        </Card>
+        <aside className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 text-[var(--card-foreground)] shadow-[var(--shadow-soft)]">
+          <h2 className="text-base font-semibold tracking-tight">{t("summary")}</h2>
+          <div className="mt-3 space-y-2 text-sm">
+            {orderItems.map(({ item, product }) => {
+              if (!product) return null;
+              const localized = localizeProduct(product, locale);
+              return (
+                <p key={item.productId} className="flex justify-between gap-3">
+                  <span className="text-[var(--muted-foreground)]">
+                    {localized.name} × {item.quantity}
+                  </span>
+                  <span className="text-[var(--foreground)]">
+                    {formatCurrency(localized.price * item.quantity, locale)}
+                  </span>
+                </p>
+              );
+            })}
+          </div>
+          <div className="mt-3 border-t border-[var(--border)] pt-3 text-sm">
+            <p className="flex justify-between">
+              <span className="text-[var(--muted-foreground)]">{t("total")}</span>
+              <span className="font-medium text-[var(--foreground)]">
+                {formatCurrency(totals.total, locale)}
+              </span>
+            </p>
+          </div>
+          <p className="mt-3 text-xs text-[var(--muted-foreground)]">
+            <Lock className="mr-1 inline h-3.5 w-3.5" />
+            {t("secure")}
+          </p>
+        </aside>
+      </div>
+    </section>
+  );
 }

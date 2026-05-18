@@ -40,7 +40,10 @@ async function fetchWithTimeout(url, timeoutMs) {
 
 function extractAssetPaths(html, extension) {
   const escaped = extension.replace(".", "\\.");
-  const regex = new RegExp(`(["'])([^"']*\\/_next\\/static\\/[^"']*${escaped}(?:\\?[^"']*)?)\\1`, "gi");
+  const regex = new RegExp(
+    `(["'])([^"']*\\/_next\\/static\\/[^"']*${escaped}(?:\\?[^"']*)?)\\1`,
+    "gi",
+  );
   const results = new Set();
 
   let match;

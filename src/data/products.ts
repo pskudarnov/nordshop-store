@@ -75,11 +75,31 @@ export const products: Product[] = [
       { label: "Color temp", value: "2700K–5000K" },
       { label: "Height", value: "42 cm" },
     ],
-    shippingInfo: ["Ships same day before 14:00", "Delivery 1–2 business days", "Carbon-neutral packaging"],
-    warrantyInfo: ["2-year hardware warranty", "30-day return window", "Instant replacement for DOA units"],
+    shippingInfo: [
+      "Ships same day before 14:00",
+      "Delivery 1–2 business days",
+      "Carbon-neutral packaging",
+    ],
+    warrantyInfo: [
+      "2-year hardware warranty",
+      "30-day return window",
+      "Instant replacement for DOA units",
+    ],
     reviews: [
-      { author: "Mila", role: "Product Designer", rating: 5, comment: "Finally a lamp that looks premium and doesn't fatigue my eyes.", date: "2 weeks ago" },
-      { author: "Anton", role: "Frontend Engineer", rating: 4.8, comment: "Great diffusion and clean industrial finish.", date: "1 month ago" },
+      {
+        author: "Mila",
+        role: "Product Designer",
+        rating: 5,
+        comment: "Finally a lamp that looks premium and doesn't fatigue my eyes.",
+        date: "2 weeks ago",
+      },
+      {
+        author: "Anton",
+        role: "Frontend Engineer",
+        rating: 4.8,
+        comment: "Great diffusion and clean industrial finish.",
+        date: "1 month ago",
+      },
     ],
   },
   {
@@ -119,8 +139,20 @@ export const products: Product[] = [
     shippingInfo: ["Ships in 24h", "Express available at checkout"],
     warrantyInfo: ["2-year warranty", "Keycap replacement support"],
     reviews: [
-      { author: "Leo", role: "Frontend Lead", rating: 5, comment: "Sounds refined, feels stable, zero rattle.", date: "5 days ago" },
-      { author: "Sara", role: "Writer", rating: 4.9, comment: "Quiet enough for calls, satisfying enough for drafting.", date: "3 weeks ago" },
+      {
+        author: "Leo",
+        role: "Frontend Lead",
+        rating: 5,
+        comment: "Sounds refined, feels stable, zero rattle.",
+        date: "5 days ago",
+      },
+      {
+        author: "Sara",
+        role: "Writer",
+        rating: 4.9,
+        comment: "Quiet enough for calls, satisfying enough for drafting.",
+        date: "3 weeks ago",
+      },
     ],
   },
   {
@@ -129,7 +161,8 @@ export const products: Product[] = [
     name: "Ridge Monitor Stand",
     category: "Furniture",
     description: "Oak monitor riser with hidden cable path and anti-slip feet.",
-    longDescription: "Ridge lifts your display to eye level and clears the visual noise underneath. It's the small structural change that makes your desk look intentional.",
+    longDescription:
+      "Ridge lifts your display to eye level and clears the visual noise underneath. It's the small structural change that makes your desk look intentional.",
     price: 98,
     rating: 4.6,
     reviewCount: 184,
@@ -157,7 +190,15 @@ export const products: Product[] = [
     ],
     shippingInfo: ["Packed with edge protection", "Delivery 2–4 business days"],
     warrantyInfo: ["2-year warranty"],
-    reviews: [{ author: "Inga", role: "Art Director", rating: 4.7, comment: "Instantly cleaned up my setup.", date: "2 months ago" }],
+    reviews: [
+      {
+        author: "Inga",
+        role: "Art Director",
+        rating: 4.7,
+        comment: "Instantly cleaned up my setup.",
+        date: "2 months ago",
+      },
+    ],
   },
   {
     id: "p4",
@@ -165,7 +206,8 @@ export const products: Product[] = [
     name: "Linen Notebook Set",
     category: "Accessories",
     description: "Set of 3 premium notebooks for planning and sketching.",
-    longDescription: "Thread-bound linen notebooks with dense paper stock and subtle dot grid. Designed for teams that still value pen-first thinking.",
+    longDescription:
+      "Thread-bound linen notebooks with dense paper stock and subtle dot grid. Designed for teams that still value pen-first thinking.",
     price: 36,
     rating: 4.5,
     reviewCount: 224,
@@ -186,10 +228,21 @@ export const products: Product[] = [
     tags: ["Planning", "Stationery"],
     badges: ["New"],
     features: ["120gsm paper", "Dot grid", "Thread binding"],
-    specifications: [{ label: "Size", value: "A5" }, { label: "Pages", value: "192 per notebook" }],
+    specifications: [
+      { label: "Size", value: "A5" },
+      { label: "Pages", value: "192 per notebook" },
+    ],
     shippingInfo: ["Ships in recycled envelope"],
     warrantyInfo: ["30-day satisfaction guarantee"],
-    reviews: [{ author: "Nora", role: "UX Researcher", rating: 4.6, comment: "Paper quality is excellent for marker notes.", date: "1 week ago" }],
+    reviews: [
+      {
+        author: "Nora",
+        role: "UX Researcher",
+        rating: 4.6,
+        comment: "Paper quality is excellent for marker notes.",
+        date: "1 week ago",
+      },
+    ],
   },
   {
     id: "p5",
@@ -197,7 +250,8 @@ export const products: Product[] = [
     name: "Nova Headphones",
     category: "Audio",
     description: "Closed-back wireless headphones tuned for office and travel.",
-    longDescription: "Nova balances detail and comfort for long sessions. The tuning avoids harsh highs while preserving speech clarity on calls.",
+    longDescription:
+      "Nova balances detail and comfort for long sessions. The tuning avoids harsh highs while preserving speech clarity on calls.",
     price: 249,
     oldPrice: 279,
     rating: 4.7,
@@ -219,10 +273,21 @@ export const products: Product[] = [
     tags: ["Audio", "Remote work"],
     badges: ["Limited"],
     features: ["40h battery", "Low latency", "Dual-device pairing"],
-    specifications: [{ label: "Battery", value: "40h" }, { label: "Weight", value: "282 g" }],
+    specifications: [
+      { label: "Battery", value: "40h" },
+      { label: "Weight", value: "282 g" },
+    ],
     shippingInfo: ["Insured shipping", "Delivery 1–3 business days"],
     warrantyInfo: ["2-year warranty", "Battery service program"],
-    reviews: [{ author: "Ken", role: "Motion Designer", rating: 4.8, comment: "Comfort is top tier for full-day use.", date: "3 weeks ago" }],
+    reviews: [
+      {
+        author: "Ken",
+        role: "Motion Designer",
+        rating: 4.8,
+        comment: "Comfort is top tier for full-day use.",
+        date: "3 weeks ago",
+      },
+    ],
   },
   {
     id: "p6",
@@ -230,7 +295,8 @@ export const products: Product[] = [
     name: "Lumbar Chair Support",
     category: "Furniture",
     description: "Memory-foam lumbar support with breathable mesh cover.",
-    longDescription: "A low-profile support cushion that helps maintain neutral posture during long coding blocks without feeling bulky.",
+    longDescription:
+      "A low-profile support cushion that helps maintain neutral posture during long coding blocks without feeling bulky.",
     price: 59,
     rating: 4.4,
     reviewCount: 148,
@@ -254,7 +320,15 @@ export const products: Product[] = [
     specifications: [{ label: "Foam density", value: "55D" }],
     shippingInfo: ["Next batch in 6 days"],
     warrantyInfo: ["1-year warranty"],
-    reviews: [{ author: "Victor", role: "Backend Engineer", rating: 4.3, comment: "Good support, especially for long meetings.", date: "2 months ago" }],
+    reviews: [
+      {
+        author: "Victor",
+        role: "Backend Engineer",
+        rating: 4.3,
+        comment: "Good support, especially for long meetings.",
+        date: "2 months ago",
+      },
+    ],
   },
   {
     id: "p7",
@@ -262,7 +336,8 @@ export const products: Product[] = [
     name: "Graphite Desk Mat",
     category: "Accessories",
     description: "Large anti-slip desk mat with stitched edges.",
-    longDescription: "Graphite anchors your daily setup and adds visual calm. Resistant to spills and built to age well.",
+    longDescription:
+      "Graphite anchors your daily setup and adds visual calm. Resistant to spills and built to age well.",
     price: 45,
     rating: 4.6,
     reviewCount: 273,
@@ -286,7 +361,15 @@ export const products: Product[] = [
     specifications: [{ label: "Thickness", value: "3 mm" }],
     shippingInfo: ["Ships today", "Delivery 1–2 days"],
     warrantyInfo: ["1-year warranty"],
-    reviews: [{ author: "Alisa", role: "QA Engineer", rating: 4.7, comment: "Texture is perfect for both trackpad and mouse.", date: "1 month ago" }],
+    reviews: [
+      {
+        author: "Alisa",
+        role: "QA Engineer",
+        rating: 4.7,
+        comment: "Texture is perfect for both trackpad and mouse.",
+        date: "1 month ago",
+      },
+    ],
   },
   {
     id: "p8",
@@ -294,7 +377,8 @@ export const products: Product[] = [
     name: "Cable Organizer Kit",
     category: "Accessories",
     description: "Magnetic clips and wraps for clean cable routing.",
-    longDescription: "A practical starter set for eliminating cable clutter around monitor, dock, and charger zones.",
+    longDescription:
+      "A practical starter set for eliminating cable clutter around monitor, dock, and charger zones.",
     price: 24,
     rating: 4.3,
     reviewCount: 361,
@@ -318,7 +402,14 @@ export const products: Product[] = [
     specifications: [{ label: "Included", value: "4 clips + 4 wraps" }],
     shippingInfo: ["Ships in 24h"],
     warrantyInfo: ["30-day returns"],
-    reviews: [{ author: "Roman", role: "CTO", rating: 4.4, comment: "Small purchase, huge visual payoff.", date: "6 days ago" }],
+    reviews: [
+      {
+        author: "Roman",
+        role: "CTO",
+        rating: 4.4,
+        comment: "Small purchase, huge visual payoff.",
+        date: "6 days ago",
+      },
+    ],
   },
-
 ];

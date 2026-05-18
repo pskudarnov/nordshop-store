@@ -7,5 +7,9 @@ type Props = {
 };
 
 export function Section({ id, className, children }: Props) {
-  return <section id={id} className={cn("py-12 md:py-16", className)}>{children}</section>;
+  return (
+    <section id={id} className={cn("py-12 md:py-16", className)}>
+      {children}
+    </section>
+  );
 }

@@ -12,7 +12,12 @@ type ProductImageProps = Omit<ImageProps, "src"> & {
   fallbackSrc?: string;
 };
 
-export function ProductImage({ src, fallbackSrc = FALLBACK_PRODUCT_IMAGE, alt, ...rest }: ProductImageProps) {
+export function ProductImage({
+  src,
+  fallbackSrc = FALLBACK_PRODUCT_IMAGE,
+  alt,
+  ...rest
+}: ProductImageProps) {
   const [imgSrc, setImgSrc] = useState(src);
 
   return (

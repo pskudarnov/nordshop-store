@@ -58,7 +58,14 @@ export function ProductGallery({ images, name }: Props) {
             aria-pressed={active === idx}
           >
             <div className="absolute inset-2">
-              <ProductImage src={item} alt={getAltText(idx)} fill sizes="96px" className="object-contain" loading="lazy" />
+              <ProductImage
+                src={item}
+                alt={getAltText(idx)}
+                fill
+                sizes="96px"
+                className="object-contain"
+                loading="lazy"
+              />
             </div>
           </button>
         ))}

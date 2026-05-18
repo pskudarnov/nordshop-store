@@ -1,13 +1,19 @@
-import {useTranslations} from 'next-intl';
+import { useTranslations } from "next-intl";
 import type { Product } from "@/data/products";
 import { ProductCard } from "@/components/products/ProductCard";
 import { Skeleton } from "@/components/ui/Skeleton";
 
-export function ProductGrid({ products, loading = false }: { products: Product[]; loading?: boolean }) {
-  const t = useTranslations('productsPage');
+export function ProductGrid({
+  products,
+  loading = false,
+}: {
+  products: Product[];
+  loading?: boolean;
+}) {
+  const t = useTranslations("productsPage");
   if (loading) {
     return (
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-label={t('title')}>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-label={t("title")}>
         {Array.from({ length: 6 }).map((_, idx) => (
           <div key={idx} className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-4">
             <Skeleton className="shimmer h-48" />
@@ -20,5 +26,11 @@ export function ProductGrid({ products, loading = false }: { products: Product[]
     );
   }
 
-  return <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">{products.map((p) => <ProductCard key={p.id} product={p} />)}</div>;
+  return (
+    <div className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {products.map((p) => (
+        <ProductCard key={p.id} product={p} />
+      ))}
+    </div>
+  );
 }

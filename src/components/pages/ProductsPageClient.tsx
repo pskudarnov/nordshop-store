@@ -1,16 +1,16 @@
 "use client";
 
-import {useMemo, useState} from "react";
-import {useLocale, useTranslations} from 'next-intl';
-import {ProductFilters} from "@/components/products/ProductFilters";
-import {ProductGrid} from "@/components/products/ProductGrid";
-import {ProductSort} from "@/components/products/ProductSort";
-import {products} from "@/data/products";
-import {localizeProducts} from "@/lib/product-i18n";
-import type {AppLocale} from "@/lib/i18n";
+import { useMemo, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { ProductFilters } from "@/components/products/ProductFilters";
+import { ProductGrid } from "@/components/products/ProductGrid";
+import { ProductSort } from "@/components/products/ProductSort";
+import { products } from "@/data/products";
+import { localizeProducts } from "@/lib/product-i18n";
+import type { AppLocale } from "@/lib/i18n";
 
 export default function ProductsPageClient() {
-  const t = useTranslations('productsPage');
+  const t = useTranslations("productsPage");
   const locale = useLocale() as AppLocale;
   const localized = useMemo(() => localizeProducts(products, locale), [locale]);
 
@@ -27,14 +27,22 @@ export default function ProductsPageClient() {
   const filtered = useMemo(() => {
     const base = localized.filter((p) => {
       const q = query.trim().toLowerCase();
-      const matchesQuery = !q || [p.name, p.description, ...p.tags].join(" ").toLowerCase().includes(q);
+      const matchesQuery =
+        !q || [p.name, p.description, ...p.tags].join(" ").toLowerCase().includes(q);
       const matchesCategory = category === "all" || p.category.toLowerCase() === category;
       const matchesPrice = p.price >= minPrice && p.price <= maxPrice;
       const matchesRating = p.rating >= minRating;
       const matchesStock = !inStockOnly || p.inStock;
       const matchesFeatured = !featuredOnly || p.badges.length > 0;
 
-      return matchesQuery && matchesCategory && matchesPrice && matchesRating && matchesStock && matchesFeatured;
+      return (
+        matchesQuery &&
+        matchesCategory &&
+        matchesPrice &&
+        matchesRating &&
+        matchesStock &&
+        matchesFeatured
+      );
     });
 
     const sorted = [...base];
@@ -75,8 +83,8 @@ export default function ProductsPageClient() {
 
   return (
     <section className="py-10">
-      <h1 className="text-3xl font-semibold text-[var(--foreground)]">{t('title')}</h1>
-      <p className="mt-2 text-sm text-[var(--muted-foreground)]">{t('subtitle')}</p>
+      <h1 className="text-3xl font-semibold text-[var(--foreground)]">{t("title")}</h1>
+      <p className="mt-2 text-sm text-[var(--muted-foreground)]">{t("subtitle")}</p>
 
       <div className="mt-6 space-y-4">
         <ProductFilters
@@ -101,7 +109,9 @@ export default function ProductsPageClient() {
         />
 
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <p className="text-sm text-[var(--muted-foreground)]">{t('count', {count: filtered.length})}</p>
+          <p className="text-sm text-[var(--muted-foreground)]">
+            {t("count", { count: filtered.length })}
+          </p>
           <ProductSort value={sort} onChange={setSort} />
         </div>
 
@@ -109,8 +119,8 @@ export default function ProductsPageClient() {
           <ProductGrid products={filtered} />
         ) : (
           <div className="surface-card p-8 text-center">
-            <p className="font-medium text-[var(--foreground)]">{t('emptyTitle')}</p>
-            <p className="mt-2 text-sm text-[var(--muted-foreground)]">{t('emptyText')}</p>
+            <p className="font-medium text-[var(--foreground)]">{t("emptyTitle")}</p>
+            <p className="mt-2 text-sm text-[var(--muted-foreground)]">{t("emptyText")}</p>
           </div>
         )}
       </div>

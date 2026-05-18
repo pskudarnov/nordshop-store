@@ -19,11 +19,17 @@ export function ToastViewport() {
           >
             <div className="flex items-start gap-2">
               <span className="mt-0.5 text-emerald-500">
-                {toast.type === "success" ? <CheckCircle2 className="h-4 w-4" /> : <Info className="h-4 w-4" />}
+                {toast.type === "success" ? (
+                  <CheckCircle2 className="h-4 w-4" />
+                ) : (
+                  <Info className="h-4 w-4" />
+                )}
               </span>
               <div className="min-w-0 flex-1">
                 <p className="text-sm font-medium text-[var(--foreground)]">{toast.title}</p>
-                {toast.message ? <p className="mt-0.5 text-xs text-[var(--muted-foreground)]">{toast.message}</p> : null}
+                {toast.message ? (
+                  <p className="mt-0.5 text-xs text-[var(--muted-foreground)]">{toast.message}</p>
+                ) : null}
               </div>
               <button
                 type="button"

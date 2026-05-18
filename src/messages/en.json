@@ -267,11 +267,7 @@
   },
   "checkout": {
     "title": "Checkout",
-    "steps": [
-      "Shipping",
-      "Payment",
-      "Confirmation"
-    ],
+    "steps": ["Shipping", "Payment", "Confirmation"],
     "shippingTitle": "Shipping details",
     "name": "Full name",
     "address": "Address",
