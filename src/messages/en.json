@@ -1,0 +1,300 @@
+{
+  "common": {
+    "brand": "NordShop",
+    "language": "Language",
+    "ru": "RU",
+    "en": "EN",
+    "home": "Home",
+    "products": "Products"
+  },
+  "meta": {
+    "title": "NordShop — Premium workspace essentials",
+    "description": "Curated products for productive workspaces: lighting, ergonomics, accessories, and polished checkout.",
+    "ogDescription": "Premium workspace products with fast delivery and trusted support.",
+    "productsTitle": "Products — NordShop",
+    "productsDescription": "NordShop catalog: lighting, ergonomics, and accessories for calm, high-performance work.",
+    "cartTitle": "Cart — NordShop",
+    "cartDescription": "Review your order and complete checkout securely.",
+    "checkoutTitle": "Checkout — NordShop",
+    "checkoutDescription": "NordShop checkout: shipping, payment and order confirmation.",
+    "productFallbackTitle": "Product not found",
+    "productFallbackDescription": "This product is currently unavailable in the NordShop catalog"
+  },
+  "theme": {
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme"
+  },
+  "header": {
+    "nav": {
+      "products": "Products",
+      "setups": "Setups",
+      "testimonials": "Testimonials"
+    },
+    "actions": {
+      "openCart": "Open cart",
+      "toggleMenu": "Toggle menu",
+      "closeMenu": "Close menu",
+      "checkout": "Checkout"
+    },
+    "a11y": {
+      "mainNav": "Main navigation",
+      "mobileNav": "Mobile navigation",
+      "cart": "Shopping cart"
+    }
+  },
+  "footer": {
+    "about": "Curated workspace essentials with reliable shipping, trusted support, and premium quality control.",
+    "supportTitle": "Support",
+    "tracking": "Order tracking",
+    "chat": "Live chat · 09:00–21:00",
+    "deliveryTitle": "Delivery & Returns",
+    "freeDelivery": "Free delivery from {value}",
+    "returns": "30-day returns",
+    "warranty": "2-year warranty",
+    "companyTitle": "Company",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "policy": "Returns policy",
+    "source": "Source code",
+    "copyright": "© 2026 NordShop. All rights reserved."
+  },
+  "landing": {
+    "hero": {
+      "badge": "Premium workspace essentials",
+      "title": "Curated tools for calm, high-performance workspaces.",
+      "subtitle": "NordShop helps teams and creators build cleaner desks with products tested for comfort, reliability, and all-day focus.",
+      "shop": "Shop collection",
+      "explore": "Explore setups",
+      "trust1": "Free shipping over {value}",
+      "trust2": "30-day returns",
+      "trust3": "Secure checkout",
+      "stats": {
+        "customers": "Happy customers",
+        "rating": "Average rating",
+        "curated": "Curated products",
+        "delivery": "Express delivery"
+      },
+      "popular": "Popular this week",
+      "bundleTitle": "Fjord Keyboard + Aura Lamp Bundle",
+      "bundleText": "Best-selling setup for developers and designers: warm light, quiet tactile typing, and cleaner desk flow.",
+      "bundlePrice": "Bundle price",
+      "bundleStock": "In stock · Ships today",
+      "bundleAlt1": "Fjord keyboard bundle image",
+      "bundleAlt2": "Aura desk lamp bundle image"
+    },
+    "featured": {
+      "title": "Featured collection",
+      "subtitle": "Top-rated pieces trusted by creators, engineers, and studio teams this month.",
+      "trendingTitle": "Trending now",
+      "trendingSubtitle": "Products with the highest customer activity this week."
+    },
+    "benefits": {
+      "title": "Why NordShop",
+      "subtitle": "Built for premium workspace routines, not impulse shopping.",
+      "items": [
+        {
+          "title": "Curated quality",
+          "text": "Every item is selected for longevity, comfort, and daily utility."
+        },
+        {
+          "title": "Fast and reliable delivery",
+          "text": "98% of orders ship within 24 hours from local stock."
+        },
+        {
+          "title": "2-year warranty",
+          "text": "Transparent warranty and no-friction replacement support."
+        },
+        {
+          "title": "Trusted by teams",
+          "text": "From freelancers to 40+ person product teams worldwide."
+        }
+      ]
+    },
+    "extra": {
+      "usedBy": "Used by creators, developers, designers",
+      "setupsTitle": "Desk inspiration",
+      "setups": [
+        {
+          "title": "Creator Desk",
+          "text": "Balanced lighting and silent tools for long editing sessions."
+        },
+        {
+          "title": "Developer Station",
+          "text": "Ergonomic accessories for deep, distraction-free coding."
+        },
+        {
+          "title": "Remote Team Kit",
+          "text": "Reliable audio and tidy desk systems for daily collaboration."
+        }
+      ],
+      "testimonials": "Testimonials",
+      "editorials": [
+        {
+          "title": "Quiet by design",
+          "text": "A setup should reduce noise before productivity tools do."
+        },
+        {
+          "title": "Objects that age well",
+          "text": "We prioritize durable materials over short-term trends."
+        }
+      ],
+      "faqTitle": "FAQ",
+      "faq": [
+        {
+          "q": "How fast is delivery?",
+          "a": "Most in-stock orders ship in 24 hours and arrive within 1–3 business days."
+        },
+        {
+          "q": "Can I return an item?",
+          "a": "Yes. You have 30 days to return items in original condition."
+        },
+        {
+          "q": "Do products include warranty?",
+          "a": "All core products include a 2-year warranty."
+        }
+      ],
+      "setupAlt": "setup photo"
+    },
+    "cta": {
+      "label": "NordShop access",
+      "title": "Ready to upgrade your workspace?",
+      "text": "Discover products that improve focus, reduce clutter, and make your setup feel intentional every day.",
+      "button": "Explore all products"
+    }
+  },
+  "productsPage": {
+    "title": "Products",
+    "subtitle": "Curated essentials for focused work, thoughtful setups, and daily comfort.",
+    "count": "{count} products",
+    "emptyTitle": "No matching products",
+    "emptyText": "Try broadening filters or clearing your search query."
+  },
+  "productSort": {
+    "label": "Sort",
+    "aria": "Sort products",
+    "featured": "Featured",
+    "newest": "Newest",
+    "priceAsc": "Price: low to high",
+    "priceDesc": "Price: high to low",
+    "rating": "Rating",
+    "reviews": "Most reviewed"
+  },
+  "productFilters": {
+    "search": "Search",
+    "searchAria": "Search products",
+    "searchPlaceholder": "Keyboard, lamp...",
+    "category": "Category",
+    "categoryAria": "Category filter",
+    "all": "All",
+    "minPrice": "Min price",
+    "maxPrice": "Max price",
+    "rating": "Rating",
+    "any": "Any",
+    "clear": "Clear all",
+    "featuredOnly": "Best sellers/new only",
+    "inStockOnly": "In stock only",
+    "filters": "Filters",
+    "close": "Close filters"
+  },
+  "productCard": {
+    "toastAddedTitle": "{name} added to cart",
+    "toastAddedMessage": "SKU {sku} · ETA {eta} day(s)",
+    "imageAltSuffix": "premium workspace product photo",
+    "inStock": "{count} in stock",
+    "outOfStock": "Out of stock",
+    "eta": "Usually delivered in {days} business day(s)",
+    "addAria": "Add {name} to cart",
+    "added": "Added",
+    "addToCart": "Add to cart",
+    "details": "Details"
+  },
+  "productDetails": {
+    "breadcrumbsBack": "← Back to products",
+    "reviewsTitle": "Customer reviews",
+    "relatedTitle": "Related products",
+    "arrivesBy": "Arrives by {date}",
+    "price": "Price",
+    "inStock": "{count} in stock",
+    "outOfStock": "Out of stock",
+    "addToCart": "Add to cart",
+    "specs": "Specifications",
+    "shipping": "Shipping",
+    "warranty": "Warranty & returns",
+    "fastShipping": "Fast shipping",
+    "returns": "30-day returns",
+    "warrantyIncluded": "Warranty included",
+    "securePayments": "Secure checkout with Stripe, Apple Pay, Google Pay",
+    "reviewMeta": "{author}, {role} · ★ {rating} · {date}"
+  },
+  "cartDrawer": {
+    "title": "Cart ({count})",
+    "close": "Close cart",
+    "emptyTitle": "Your cart is empty",
+    "emptyText": "Add a few products to continue to secure checkout.",
+    "browse": "Browse products",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "viewCart": "View cart",
+    "checkout": "Checkout"
+  },
+  "cartPage": {
+    "item": "Item",
+    "removedTitle": "{name} removed from cart",
+    "removedText": "You can add it again from the catalog.",
+    "title": "Your cart",
+    "subtitle": "Review your items and complete checkout securely.",
+    "emptyTitle": "Your cart is empty",
+    "emptyText": "Start with our most-loved workspace essentials.",
+    "browse": "Browse products",
+    "alsoLike": "You may also like"
+  },
+  "cartSummary": {
+    "title": "Order summary",
+    "freeLeft": "You are {value} away from free shipping",
+    "freeUnlocked": "You unlocked free shipping",
+    "subtotal": "Subtotal",
+    "delivery": "Delivery",
+    "free": "Free",
+    "total": "Total",
+    "secureNote": "Secure checkout · Buyer protection",
+    "checkout": "Proceed to checkout"
+  },
+  "cartItem": {
+    "unitPrice": "Unit price",
+    "lineTotal": "Line total",
+    "remove": "Remove",
+    "removeAria": "Remove {name} from cart"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "steps": [
+      "Shipping",
+      "Payment",
+      "Confirmation"
+    ],
+    "shippingTitle": "Shipping details",
+    "name": "Full name",
+    "address": "Address",
+    "standard": "Standard delivery · 2-4 days",
+    "express": "Express delivery · Next day",
+    "toPayment": "Continue to payment",
+    "paymentTitle": "Payment",
+    "cardDetails": "Card details",
+    "cardNumber": "Card number",
+    "exp": "MM/YY",
+    "cvc": "CVC",
+    "promo": "Promo code",
+    "review": "Review order",
+    "confirmTitle": "Order confirmation",
+    "confirmText": "Everything is ready. This is a mock checkout flow for portfolio showcase.",
+    "placeOrder": "Place order",
+    "summary": "Order summary",
+    "total": "Total",
+    "secure": "Secure checkout by encrypted payment gateway"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you are looking for does not exist.",
+    "home": "Go home"
+  }
+}
